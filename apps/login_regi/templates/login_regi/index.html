@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Courses</title>
+        {%load static%}
+        
+    </head>
+    <body>
+        <div>
+            <h1>Registration</h1>
+            <form action="/regist" method='post'>
+                {% csrf_token %}
+                First Name:<br>
+                <input type="text" name="firstname">
+                <br>
+                Last Name:<br>
+                <input type="text" name="lastname">
+                <br>
+                Email:<br>
+                <input type="text" name="email">
+                <br>
+                Password:<br>
+                <input type="password" name="password">
+                <br>
+                Password confirm: <br>
+                <input type="password" name="password_confirm">
+                <br>
+                <input type="submit" value="Register">
+            </form> 
+        </div>
+        <div>
+            <h1>Log in</h1>
+            <form action="/login" method='post'>
+                {% csrf_token %}
+                Email:<br>
+                <input type="text" name="email">
+                <br>
+                Password:<br>
+                <input type="password" name="password">
+                <br>
+                <input type="submit" value="Login">
+            </form> 
+        </div>
+                {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </body>
+</html>

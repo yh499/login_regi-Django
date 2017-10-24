@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Courses</title>
+        {%load static%}
+        
+    </head>
+    <body>
+       <h1>Success! Welcome, {{ request.session.firstname}} </h1>
+
+    </body>
+    <a href="/">go back</a>
+    <form action="/logout" method='post'>
+    {% csrf_token %}
+    <input type="submit" value="Logout">
+    </form> 
+</html>
